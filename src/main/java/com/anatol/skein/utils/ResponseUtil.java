@@ -41,4 +41,9 @@ public class ResponseUtil {
         return new ResponseEntity<>(
                 new ResponseDTO<>(false, message, null), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    public static ResponseEntity<?> error(String message, HttpStatus status) {
+        return new ResponseEntity<>(
+                new ResponseDTO<>(false, message, null), status);
+    }
 }
